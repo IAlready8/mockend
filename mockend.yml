@@ -1,40 +1,41 @@
-User:
-  hasMany: [Post]
-  fake:
-    _count: 10
-    name: name
-    email: email
-    bio:
-      loremParagraphs: [2, 4]
-    isAdmin:
-      bool: 20
-    createdAt:
-      dateTime: ['2022-01-01', '2023-12-31']
+models:
+  User:
+    hasMany: [Post]
+    fake:
+      _count: 10
+      name: name
+      email: email
+      bio:
+        loremParagraphs: [2, 4]
+      isAdmin:
+        bool: 20
+      createdAt:
+        dateTime: ['2022-01-01', '2023-12-31']
 
-Post:
-  belongsTo: [User]
-  hasMany: [Comment]
-  fake:
-    _count: 20
-    title:
-      loremWords: [5, 10]
-    body:
-      loremParagraphs: [3, 6]
-    cover:
-      imageURL: [800, 600]
-    views:
-      int: [0, 9999]
-    isPublished:
-      bool: 80
-    createdAt:
-      dateTime: ['2020-01-01', '2024-01-01']
+  Post:
+    belongsTo: [User]
+    hasMany: [Comment]
+    fake:
+      _count: 20
+      title:
+        loremWords: [5, 10]
+      body:
+        loremParagraphs: [3, 6]
+      cover:
+        imageURL: [800, 600]
+      views:
+        int: [0, 9999]
+      isPublished:
+        bool: 80
+      createdAt:
+        dateTime: ['2020-01-01', '2024-01-01']
 
-Comment:
-  belongsTo: [Post]
-  fake:
-    _count: 40
-    email: email
-    body:
-      loremParagraphs: [1, 3]
-    createdAt:
-      dateTime: ['2020-01-01', '2024-01-01']
+  Comment:
+    belongsTo: [Post]
+    fake:
+      _count: 40
+      email: email
+      body:
+        loremParagraphs: [1, 3]
+      createdAt:
+        dateTime: ['2020-01-01', '2024-01-01']
